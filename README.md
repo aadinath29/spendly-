@@ -131,3 +131,4 @@ Serve `client/dist` with any static host (or point the API at it).
 | GET | `/api/health` | Server + DB status |
 
 All endpoints except register/login require an `Authorization: Bearer <token>` header.
+# Expense-Dashboard
