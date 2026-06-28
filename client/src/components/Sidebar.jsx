@@ -1,11 +1,12 @@
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, ReceiptText, Tags, LogOut, Wallet } from 'lucide-react';
+import { LayoutDashboard, ReceiptText, Tags, LogOut, Wallet, FlaskConical } from 'lucide-react';
 import { useAuth } from '../context/AuthContext.jsx';
 
 const NAV = [
   { to: '/', label: 'Dashboard', icon: LayoutDashboard, end: true },
   { to: '/expenses', label: 'Expenses', icon: ReceiptText },
   { to: '/categories', label: 'Categories', icon: Tags },
+  { to: '/playground', label: 'Motion Lab', icon: FlaskConical },
 ];
 
 const initials = (name = '') =>

@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "narayani-menu",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "C:\\Users\\Admin\\Downloads\\narayani-menu-react\\narayani-menu", "run", "dev"],
+      "port": 5173
+    },
+    {
+      "name": "spendly-client",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "D:\\aadinath\\client", "run", "dev", "--", "--port", "5176"],
+      "port": 5176
+    }
+  ]
+}
