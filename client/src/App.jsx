@@ -8,7 +8,6 @@ import Dashboard from './pages/Dashboard.jsx';
 import Expenses from './pages/Expenses.jsx';
 import Categories from './pages/Categories.jsx';
 import NotFound from './pages/NotFound.jsx';
-import Playground from './pages/Playground.jsx';
 
 export default function App() {
   const { isAuthenticated } = useAuth();
@@ -17,7 +16,6 @@ export default function App() {
     <Routes>
       <Route path="/login" element={isAuthenticated ? <Navigate to="/" replace /> : <Login />} />
       <Route path="/signup" element={isAuthenticated ? <Navigate to="/" replace /> : <Signup />} />
-      <Route path="/playground" element={<Playground />} />
 
       <Route element={<ProtectedRoute />}>
         <Route element={<Layout />}>
