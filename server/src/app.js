@@ -15,7 +15,13 @@ const app = express();
 app.use(helmet());
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    origin: (origin, cb) => {
+      const allowed = (process.env.CLIENT_URL || 'http://localhost:5173')
+        .split(',')
+        .map((s) => s.trim());
+      if (!origin || allowed.includes(origin)) return cb(null, true);
+      cb(new Error('Not allowed by CORS'));
+    },
     credentials: true,
   })
 );
