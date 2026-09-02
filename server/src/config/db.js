@@ -22,6 +22,7 @@ const pool = mysql.createPool({
   decimalNumbers: true,
   dateStrings: true,
   charset: 'utf8mb4_unicode_ci',
+  ...(process.env.DB_SSL === 'true' && { ssl: { rejectUnauthorized: true } }),
 });
 
 /** Run a parameterized query and return the rows. */

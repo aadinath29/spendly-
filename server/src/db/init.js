@@ -12,6 +12,7 @@ const {
   DB_USER = 'root',
   DB_PASSWORD = '',
   DB_NAME = 'expense_tracker',
+  DB_SSL = 'false',
 } = process.env;
 
 // DB_NAME is interpolated into SQL, so guard it against anything unexpected.
@@ -30,6 +31,7 @@ async function main() {
     user: DB_USER,
     password: DB_PASSWORD,
     multipleStatements: true,
+    ...(DB_SSL === 'true' && { ssl: { rejectUnauthorized: true } }),
   });
 
   try {
